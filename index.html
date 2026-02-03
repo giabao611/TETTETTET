@@ -14,7 +14,7 @@ width:220px;
 height:100%;
 background:url("images/peach-branch.png") no-repeat;
 background-size:cover;
-opacity:0.25;
+opacity:0.22;
 z-index:0;
 pointer-events:none;
 filter:blur(0.8px);
@@ -39,17 +39,16 @@ display:none;
 }
 }
 
-
 body{
 margin:0;
 font-family:Arial;
-background:#f7f1e8;
+background:#FFF4EC;          /* 🌾 nền ngà sáng */
 overflow-x:hidden;
 }
 
 /* HEADER */
 header{
-background:#d9a45b;
+background:#E34A4A;          /* 🔴 đỏ cam OCOP */
 color:white;
 text-align:center;
 padding:15px;
@@ -61,13 +60,13 @@ header h1{margin:0}
 
 /* MENU FIXED */
 nav{
-background:#b98b4a;
+background:#D94141;          /* đỏ đậm hơn header */
 position:fixed;
 top:20px;
 right:20px;
 border-radius:10px;
 z-index:999;
-box-shadow:0 4px 8px rgba(0,0,0,0.2);
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
 }
 
 nav a{
@@ -75,7 +74,7 @@ color:white;
 padding:10px 15px;
 display:block;
 text-decoration:none;
-border-bottom:1px solid rgba(255,255,255,0.3);
+border-bottom:1px solid rgba(255,255,255,0.35);
 }
 
 nav a:last-child{
@@ -83,7 +82,7 @@ border-bottom:none;
 }
 
 nav a:hover{
-background:#a07134;
+background:#E85C5C;
 }
 
 /* BANNER */
@@ -103,7 +102,7 @@ z-index:2;
 }
 
 h2{
-color:#7a4f1d;
+color:#2F3E5C;              /* xanh đậm – dễ đọc */
 }
 
 /* SEARCH */
@@ -116,8 +115,9 @@ text-align:center;
 width:60%;
 padding:12px;
 border-radius:10px;
-border:2px solid #caa35d;
+border:2px solid #FFA94D;    /* cam nhạt */
 font-size:16px;
+background:#FFFDF9;
 }
 
 /* PRODUCTS */
@@ -131,23 +131,26 @@ align-items:stretch;
 
 /* PRODUCT */
 .product{
-background:#fffaf2;
-border-radius:12px;
+background:#FFFDF6;          /* nền thẻ dịu */
+border-radius:14px;
 width:300px;
 padding:15px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+box-shadow:0 4px 10px rgba(0,0,0,0.12);
 transition:0.3s ease;
 display:flex;
 flex-direction:column;
+border:2px solid #FFD166;    /* viền vàng nhạt */
 }
 
 .product p{
 flex-grow:1;
+color:#5A5A5A;
 }
 
 /* HOVER */
 .product:hover{
-transform:scale(1.08);
+transform:translateY(-6px) scale(1.05);
+box-shadow:0 8px 18px rgba(0,0,0,0.18);
 z-index:10;
 }
 
@@ -156,8 +159,9 @@ width:100%;
 border-radius:10px;
 }
 
+/* GIÁ */
 .price{
-color:#c26b1d;
+color:#C26B1D;              /* nâu cam */
 font-weight:bold;
 }
 
@@ -170,22 +174,32 @@ gap:10px;
 
 .btn{
 flex:1;
-background:#c26b1d;
+background:#E34A4A;          /* nút chính */
 color:white;
 padding:8px;
-border-radius:6px;
+border-radius:8px;
 text-decoration:none;
 text-align:center;
 font-size:14px;
+transition:0.25s;
+}
+
+.btn:hover{
+background:#D94141;
 }
 
 .btn.detail{
-background:#8a5a2b;
+background:#6EC6C1;          /* xanh ngọc – nút phụ */
+color:#123;
+}
+
+.btn.detail:hover{
+background:#5BB3AE;
 }
 
 /* FOOTER */
 footer{
-background:#b98b4a;
+background:#E34A4A;
 color:white;
 text-align:center;
 padding:15px;
@@ -198,13 +212,13 @@ z-index:2;
 .lotus{
 position:fixed;
 top:-50px;
-width:30px;
-height:30px;
+width:50px;
+height:50px;
 background:url("images/lotus.png") no-repeat center/contain;
 pointer-events:none;
 animation:fall linear forwards;
 z-index:1;
-opacity:0.8;
+opacity:0.75;
 }
 
 @keyframes fall{
@@ -217,6 +231,7 @@ transform:translateY(110vh) rotate(360deg);
 opacity:0;
 }
 }
+
 </style>
 </head>
 
@@ -234,7 +249,7 @@ opacity:0;
 </nav>
 
 <div class="banner">
-<img src="https://i.ibb.co/5gjwbFqT/OCOP-QB-trang.jpg">
+<img src="images/trangchu1.jpg">
 </div>
 
 <div class="container">
