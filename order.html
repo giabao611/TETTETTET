@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đặt hàng OCOP</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f7f1e6;
+padding:40px;
+}
+
+/* Khung form */
+form{
+background:#fff4dc;
+padding:30px;
+border-radius:20px;
+max-width:520px;
+margin:auto;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border:3px solid #caa35d;
+}
+
+/* Tiêu đề */
+h2{
+text-align:center;
+color:#7b4b15;
+}
+
+/* Sản phẩm */
+.product{
+border-bottom:1px dashed #caa35d;
+padding:10px 0;
+}
+
+.product:last-child{
+border-bottom:none;
+}
+
+.product label{
+font-weight:bold;
+color:#7b4b15;
+}
+
+.product input{
+width:80px;
+padding:6px;
+margin-left:10px;
+border-radius:8px;
+border:1px solid #caa35d;
+}
+
+/* Input chung */
+input, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #caa35d;
+background:#fffaf0;
+}
+
+/* Tổng tiền */
+.total{
+font-size:18px;
+font-weight:bold;
+color:#a65a18;
+margin-top:15px;
+text-align:center;
+}
+
+/* Nút gửi */
+button{
+background:#c78a3a;
+color:white;
+padding:12px;
+border:none;
+width:100%;
+border-radius:12px;
+font-size:16px;
+cursor:pointer;
+margin-top:15px;
+}
+
+button:hover{
+background:#a66d28;
+}
+
+/* Link */
+a{
+color:#7b4b15;
+text-decoration:none;
+font-weight:bold;
+}
+
+a:hover{
+text-decoration:underline;
+}
+</style>
+
+<script>
+function tinhTien(){
+let prices = [60000,150000,25000,120000,550000,320000];
+let total = 0;
+
+for(let i=0;i<6;i++){
+let qty = document.getElementById("sp"+i).value;
+total += qty * prices[i];
+}
+
+document.getElementById("tongtien").innerText =
+"💰 Tổng tiền: " + total.toLocaleString("vi-VN") + " đ";
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>🛒 Đặt hàng sản phẩm OCOP</h2>
+
+<form action = thanku.html>
+
+<input type="text" placeholder="Họ và tên" required>
+<input type="tel" placeholder="Số điện thoại" required>
+
+<!-- Ô ĐỊA CHỈ (MỚI THÊM) -->
+<input type="text" placeholder="Địa chỉ giao hàng" required>
+
+<div class="product">
+<label>Nón lá (60.000đ)</label>
+<input type="number" id="sp0" min="0" value="0" onchange="tinhTien()">
+</div>
+
+<div class="product">
+<label>Khoai deo (150.000đ/kg)</label>
+<input type="number" id="sp1" min="0" value="0" onchange="tinhTien()">
+</div>
+
+<div class="product">
+<label>Gạo sạch Lệ Thủy (25.000đ/kg)</label>
+<input type="number" id="sp2" min="0" value="0" onchange="tinhTien()">
+</div>
+
+<div class="product">
+<label>Ớt bột Hồng Thuỷ (120.000đ/kg)</label>
+<input type="number" id="sp3" min="0" value="0" onchange="tinhTien()">
+</div>
+
+<div class="product">
+<label>Mực một nắng Ngư Thuỷ (550.000đ/kg)</label>
+<input type="number" id="sp4" min="0" value="0" onchange="tinhTien()">
+</div>
+
+<div class="product">
+<label>Cá lóc khô tẩm gia vị (320.000đ/kg)</label>
+<input type="number" id="sp5" min="0" value="0" onchange="tinhTien()">
+</div>
+
+<div class="total" id="tongtien">
+💰 Tổng tiền: 0 đ
+</div>
+
+<textarea rows="4" placeholder="📝 Chú thích khi đặt hàng (ví dụ: giao buổi sáng, gói quà, gọi trước khi giao...)"></textarea>
+
+<button type="submit">Gửi đơn hàng</button>
+
+</form>
+
+<br>
+
+<center>
+<a href="index.html">⬅ Quay về trang chủ</a>
+</center>
+
+</body>
+</html>

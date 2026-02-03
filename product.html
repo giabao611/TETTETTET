@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chi tiết sản phẩm</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f7f1e6;
+padding:40px;
+}
+
+/* KHUNG CHUNG */
+.khung{
+max-width:1000px;
+margin:40px auto;
+background:#f4e6c8;
+border:4px solid #caa35d;
+border-radius:25px;
+padding:30px;
+display:flex;
+gap:30px;
+align-items:center;
+}
+
+/* ẢNH */
+.image-box{
+position:relative;
+}
+
+.image-box img{
+width:280px;
+height:280px;
+border-radius:20px;
+border:4px solid #caa35d;
+object-fit:cover;
+}
+
+/* MŨI TÊN */
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.5);
+color:white;
+border:none;
+font-size:20px;
+padding:8px 12px;
+cursor:pointer;
+border-radius:50%;
+}
+
+.arrow.left{left:-15px;}
+.arrow.right{right:-15px;}
+
+/* NỘI DUNG */
+.noidung{
+flex:2;
+line-height:1.6;
+}
+
+h2,h3{
+text-align:center;
+color:#7b4b15;
+}
+
+/* NÚT */
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+background:#c78a3a;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.btn:hover{
+background:#a66d28;
+}
+
+a{
+color:#7b4b15;
+font-weight:bold;
+text-decoration:none;
+}
+</style>
+
+<script>
+function doiAnh(id, mangAnh, step){
+let img = document.getElementById(id);
+let index = parseInt(img.dataset.index);
+index += step;
+
+if(index < 0) index = mangAnh.length - 1;
+if(index >= mangAnh.length) index = 0;
+
+img.src = mangAnh[index];
+img.dataset.index = index;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>🌾 Chi tiết sản phẩm OCOP</h2>
+
+<!-- ===== NÓN LÁ ===== -->
+<div class="khung" id="nonla">
+<div class="noidung">
+<h3>Nón lá</h3>
+<b>Nguồn gốc:</b> Làng Quy Hậu – Lệ Thủy.
+<p><b>Quy trình:</b> Chuẩn bị lá → làm khuôn → khâu → hoàn thiện.</p>
+<p><b>Chứng nhận:</b> OCOP 3 sao.</p>
+<a href="order.html" class="btn">🛒 Đặt hàng</a>
+</div>
+
+<div class="image-box">
+<button class="arrow left" onclick="doiAnh('img1',nonla,-1)">◀</button>
+<img id="img1" data-index="0" src="images/nonla1.jpg">
+<button class="arrow right" onclick="doiAnh('img1',nonla,1)">▶</button>
+</div>
+</div>
+
+<!-- ===== KHOAI DEO ===== -->
+<div class="khung" id="khoaideo">
+<div class="noidung">
+<h3>Khoai deo</h3>
+<b>Nguồn gốc:</b> Hải Ninh – Quảng Bình.
+<p><b>Quy trình:</b> Chọn giống → Rửa khoai → Luộc chín → Cắt lát → Phơi nắng đến độ dẻo mềm → Đóng gói.</p>
+<p><b>Chứng nhận:</b> OCOP 3 sao.</p>
+<a href="order.html" class="btn">🛒 Đặt hàng</a>
+</div>
+
+<div class="image-box">
+<button class="arrow left" onclick="doiAnh('img2',khoai,-1)">◀</button>
+<img id="img2" data-index="0" src="images/khoaideo1.jpg">
+<button class="arrow right" onclick="doiAnh('img2',khoai,1)">▶</button>
+</div>
+</div>
+
+<!-- ===== ỚT BỘT HỒNG THỦY ===== -->
+<div class="khung" id="otbot">
+<div class="noidung">
+<h3>Ớt bột Hồng Thủy</h3>
+<b>Nguồn gốc:</b> Hồng Thủy – Lệ Thủy, Quảng Bình.
+<p><b>Đặc điểm:</b> Cay nồng tự nhiên, màu đỏ đẹp, hương thơm đậm; xay có hoặc không hạt.</p>
+<p><b>Quy trình:</b> Ớt chín → phơi khô → xay thủ công → đóng gói.</p>
+<p><b>Chứng nhận:</b> OCOP (sản phẩm tiêu biểu).</p>
+<a href="order.html" class="btn">🛒 Đặt hàng</a>
+</div>
+
+<div class="image-box">
+<button class="arrow left" onclick="doiAnh('img3',otbot,-1)">◀</button>
+<img id="img3" data-index="0" src="images/otbot1.jpg">
+<button class="arrow right" onclick="doiAnh('img3',otbot,1)">▶</button>
+</div>
+</div>
+
+<!-- ===== MỰC MỘT NẮNG NGƯ THỦY ===== -->
+<div class="khung" id="muc1nang">
+<div class="noidung">
+<h3>Mực một nắng Ngư Thủy</h3>
+<b>Nguồn gốc:</b> Ngư Thủy – Lệ Thủy, Quảng Bình.
+<p><b>Đặc điểm:</b> Mực tươi phơi đúng một nắng; ngoài se khô, trong mềm dẻo, ngọt tự nhiên; màu trắng hồng.</p>
+<p><b>Chế biến:</b> Phơi nắng tự nhiên, giữ độ dai ngon khi nướng.</p>
+<p><b>Chứng nhận:</b> OCOP 3 sao (HTX chế biến thủy hải sản Ngư Trung).</p>
+<a href="order.html" class="btn">🛒 Đặt hàng</a>
+</div>
+
+<div class="image-box">
+<button class="arrow left" onclick="doiAnh('img4',muc1nang,-1)">◀</button>
+<img id="img4" data-index="0" src="images/muc1nang1.jpg">
+<button class="arrow right" onclick="doiAnh('img4',muc1nang,1)">▶</button>
+</div>
+</div>
+
+<!-- ===== GẠO ===== -->
+<div class="khung" id="gao">
+<div class="noidung">
+<h3>Gạo sạch Lệ Thủy</h3>
+<b>Nguồn gốc:</b> Cánh đồng Lệ Thủy.
+<p><b>Quy trình:</b> Chọn giống lúa chất lượng → Canh tác theo hướng sạch (giảm phân hóa học, không tồn dư thuốc BVTV) → Thu hoạch đúng độ chín → Phơi/sấy đạt chuẩn → Xay xát khép kín → Đóng gói, bảo quản an toàn.</p>
+<p><b>Chứng nhận:</b> OCOP 3 sao.</p>
+<a href="order.html" class="btn">🛒 Đặt hàng</a>
+</div>
+
+<div class="image-box">
+<button class="arrow left" onclick="doiAnh('img5',gao,-1)">◀</button>
+<img id="img5" data-index="0" src="images/gao1.jpg">
+<button class="arrow right" onclick="doiAnh('img5',gao,1)">▶</button>
+</div>
+</div>
+
+<!-- ===== CÁ LÓC KHÔ TẨM GIA VỊ ===== -->
+<div class="khung" id="calockho">
+<div class="noidung">
+<h3>Cá lóc khô tẩm gia vị</h3>
+<b>Nguồn gốc:</b> Hợp tác xã thủy sản Ngư Nam – Quảng Bình.
+<p><b>Quy trình:</b> Cá lóc tươi → Chiên vàng đều, giòn → Tẩm ướp gia vị → Phơi khô → Đóng gói hút chân không.</p>
+<p><b>Chứng nhận:</b> OCOP 3 sao.</p>
+<a href="order.html" class="btn">🛒 Đặt hàng</a>
+</div>
+
+<div class="image-box">
+<button class="arrow left" onclick="doiAnh('img6',calockho,-1)">◀</button>
+<img id="img6" data-index="0" src="images/calockho1.jpg">
+<button class="arrow right" onclick="doiAnh('img6',calockho,1)">▶</button>
+</div>
+</div>
+
+
+<center>
+<a href="index.html">⬅ Quay về trang chủ</a>
+</center>
+
+<script>
+const nonla = [
+"images/nonla1.jpg",
+"images/nonla2.jpg",
+"images/nonla3.jpg",
+"images/nonla4.jpg",
+];
+
+const khoai = [
+"images/khoaideo1.jpg",
+"images/khoaideo2.jpg",
+"images/khoaideo3.jpg",
+"images/khoaideo4.jpg",
+"images/khoaideo5.jpg"
+];
+
+const otbot = [
+"images/otbot1.jpg",
+"images/otbot2.jpg",
+"images/otbot3.jpg",
+"images/otbot4.jpg",
+];
+
+const muc1nang = [
+"images/muc1nang1.jpg",
+"images/muc1nang2.jpg",
+"images/muc1nang3.jpg",
+"images/muc1nang4.jpg"
+];
+
+const gao = [
+"images/gao1.jpg",
+"images/gao2.jpg",
+"images/gao3.jpg",
+"images/gao4.jpg",
+"images/gao5.jpg"
+];
+
+const calockho = [
+"images/calockho1.jpg",
+"images/calockho2.jpg",
+];
+
+</script>
+
+</body>
+</html>
